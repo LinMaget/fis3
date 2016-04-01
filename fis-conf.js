@@ -1,22 +1,24 @@
 //设置项目源码
-fis.set('project.files', []);
-fis.set('project.ignore', ['**.js']);
+fis.set('project.ignore', [
+  'components/**',
+  '*',              //单个文件不发布
+]);
+//框架基本js css打包路径
+fis.set('frame','/static/base');
+
 
 //打包js --BG
   fis.media('jq').match('/components/(jquery/*.js)', {    //jquery
-    useCache: false,
-    release: 'static/base/$1'
+    release: '${frame}/$1'
   })
-  fis.match('/components/(angular/*.js)', {   //angular
-    useCache: false,
-    release: 'static/base/$1'
+  fis.match('/components/(angular/*.js)', {               //angular
+    release: '${frame}/$1'
   })
 //打包js --END
 
 //打包CSS --BG
-  fis.match('/components/(bootstrap/css/*.css)', {   //bootstrap  css
-    useCache: false,
-    release: 'static/base/$1'
+  fis.match('/components/(bootstrap/css/*.css)', {     //bootstrap  css
+    release: '${frame}/$1'
   })
 //打包CSS --END
 
