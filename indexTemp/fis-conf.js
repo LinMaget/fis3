@@ -6,9 +6,9 @@
 
 //框架基本js css打包路径
 fis.set('frame','/static/base');
-//fis.match("**",{  //默认没规则没匹配到文件不发布
-//  release : false
-//})
+fis.match("**",{  //默认没规则没匹配到文件不发布
+  release : false
+})
 
 /**********************开发环境下CSS、JS生产项目需要的路径*****************/
 //打包js --BG
@@ -37,7 +37,7 @@ fis.match('::packager', {
 })
 /**********************生产环境下CSS、JS压缩合并*****************/
 fis.media('prod')
-    .match('components/**.js', {
+    .match('*.js', {
         // fis-optimizer-uglify-js 插件进行压缩，已内置
         optimizer: fis.plugin('uglify-js')})
     .match('*.css', {
