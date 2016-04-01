@@ -1,7 +1,7 @@
 # fis3
 myDemo <br>
 
-//默认已经安装 node bower 《br>
+//默认已经安装 node bower <br>
 $ npm install <br>
 $ bower install <br>
 安装 fis3 <br>
